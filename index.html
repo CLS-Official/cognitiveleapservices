@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0C0E12">
+<meta name="description" content="Cognitive Leap Services — Independent technical architecture studio and media production umbrella engineered around first-principles logic, Sovereign Core, and R² media.">
+
+<!-- Open Graph / Link Preview Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cognitiveleapservices.com/">
+<meta property="og:title" content="Cognitive Leap Services // Human Vision. AI Power.">
+<meta property="og:description" content="Engineering resilience and independent systems: Sovereign Core, CTRL+CHAOS, R² Music Catalog, and True Discovery Vaults.">
+<meta property="og:image" content="https://cognitiveleapservices.com/banner.png">
+
+<!-- Mobile & Desktop Shortcut / Web App Capabilities -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="CLS">
+<meta name="application-name" content="Cognitive Leap Services">
+
+<title>Cognitive Leap Services</title>
+
+<!-- Browser Tab Favicon & App Shortcut Icons (Auto-falls back from icon.png to icon.jpg to SVG) -->
+<link id="dynamic-favicon" rel="icon" type="image/png" href="icon.png">
+<link id="dynamic-touch-icon" rel="apple-touch-icon" href="icon.png">
+
+<!-- Inline Web App Manifest for Phone/Desktop "Install" & "Add to Home Screen" -->
+<link rel="manifest" href='data:application/manifest+json,{"name":"Cognitive Leap Services","short_name":"CLS","start_url":"./","display":"standalone","background_color":"#0C0E12","theme_color":"#008CFF","icons":[{"src":"https://cognitiveleapservices.com/icon.png","sizes":"192x192","type":"image/png"},{"src":"https://cognitiveleapservices.com/icon.png","sizes":"512x512","type":"image/png"}]}'>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    background-color: #0C0E12;
+    color: #C5CDD6;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.55;
+    padding: 20px 16px 40px 16px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #008CFF;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 14px;
+    color: #C5CDD6;
+    margin-bottom: 12px;
+  }
+
+  /* Standalone Site Header & Banner Showcase */
+  .site-header {
+    margin-bottom: 24px;
+  }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #10141C;
+    border: 1px solid #1E2633;
+    border-bottom: 2px solid #008CFF;
+    padding: 12px 18px;
+    border-radius: 6px 6px 0 0;
+  }
+  .brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #008CFF;
+    object-fit: cover;
+    background-color: #0C0E12;
+  }
+  .brand-subtitle {
+    font-family: monospace;
+    font-size: 11px;
+    color: #008CFF;
+    letter-spacing: 0.8px;
+    display: block;
+  }
+  .header-status {
+    font-family: monospace;
+    font-size: 11px;
+    color: #9DA8B5;
+    background: rgba(0, 140, 255, 0.08);
+    border: 1px solid rgba(0, 140, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+  .banner-frame {
+    width: 100%;
+    background-color: #12161F;
+    border-left: 1px solid #1E2633;
+    border-right: 1px solid #1E2633;
+    border-bottom: 1px solid #1E2633;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Hero Mission Callout */
+  .mission-box {
+    background: linear-gradient(135deg, #12161F 0%, #0C0E12 100%);
+    border-left: 4px solid #008CFF;
+    border-top: 1px solid #1E2633;
+    border-right: 1px solid #1E2633;
+    border-bottom: 1px solid #1E2633;
+    padding: 22px 20px;
+    border-radius: 4px;
+    margin-bottom: 28px;
+  }
+  .tag-badge {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 11px;
+    color: #008CFF;
+    background: rgba(0, 140, 255, 0.1);
+    border: 1px solid rgba(0, 140, 255, 0.35);
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    letter-spacing: 0.8px;
+  }
+  /* Core Pillars Grid - 3 Columns on Desktop */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background-color: #12161F;
+    border: 1px solid #1E2633;
+    border-radius: 6px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .status-line {
+    font-family: monospace;
+    font-size: 11px;
+    padding: 5px 8px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    display: inline-block;
+    line-height: 1.3;
+  }
+  .status-active {
+    background: rgba(0, 140, 255, 0.12);
+    color: #008CFF;
+    border-left: 3px solid #008CFF;
+  }
+  .status-staged {
+    background: rgba(197, 205, 214, 0.08);
+    color: #9DA8B5;
+    border-left: 3px solid #6B7785;
+  }
+  ul.feature-list {
+    list-style: none;
+    margin: 6px 0 14px 0;
+  }
+  ul.feature-list li {
+    font-size: 13px;
+    color: #AEB8C4;
+    margin-bottom: 7px;
+    padding-left: 14px;
+    position: relative;
+  }
+  ul.feature-list li::before {
+    content: "›";
+    color: #008CFF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  /* Action Buttons */
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .btn {
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .btn-primary {
+    background-color: #008CFF;
+    color: #0C0E12;
+  }
+  .btn-outline {
+    background-color: transparent;
+    color: #008CFF;
+    border: 1px solid #008CFF;
+  }
+  /* Roadmap Bar */
+  .roadmap-section {
+    background-color: #10141C;
+    border: 1px solid #1E2633;
+    border-radius: 6px;
+    padding: 22px 20px;
+    margin-bottom: 32px;
+  }
+  .phase-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .phase-item {
+    border-left: 2px solid #008CFF;
+    padding-left: 14px;
+  }
+  .phase-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .phase-desc {
+    font-size: 13px;
+    color: #9DA8B5;
+    margin: 2px 0 0 0;
+  }
+  /* Footer & Expandable Legal Policies */
+  footer {
+    border-top: 1px solid #1E2633;
+    padding-top: 22px;
+  }
+  .legal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  details {
+    background-color: #10141C;
+    border: 1px solid #1E2633;
+    border-radius: 4px;
+    padding: 9px 14px;
+  }
+  summary {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: #008CFF;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    outline: none;
+  }
+  details p {
+    font-size: 12.5px;
+    color: #9DA8B5;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  details a {
+    color: #008CFF;
+    text-decoration: none;
+  }
+  details a:hover {
+    text-decoration: underline;
+  }
+  .footer-bottom {
+    text-align: center;
+    font-family: monospace;
+    font-size: 11px;
+    color: #6B7785;
+  }
+
+  /* Tablet Breakpoint */
+  @media (max-width: 820px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card-full-tablet {
+      grid-column: span 2;
+    }
+  }
+
+  /* Mobile Phone Breakpoint */
+  @media (max-width: 560px) {
+    html, body {
+      padding: 12px 8px 30px 8px;
+    }
+    h1 {
+      font-size: 17px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .top-bar {
+      padding: 10px 12px;
+    }
+    .header-status {
+      display: none;
+    }
+    .mission-box, .roadmap-section, .card {
+      padding: 16px 12px;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .card-full-tablet {
+      grid-column: span 1;
+    }
+    .btn {
+      flex: 1 1 auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 0. STANDALONE SITE HEADER & BANNER -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="brand-identity">
+        <img id="header-logo" src="icon.png" alt="CLS Icon" class="brand-icon"
+             onerror="if(this.src.endsWith('icon.png')){this.src='icon.jpg';}else{this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230C0E12%22/><text x=%2250%%22 y=%2255%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23008CFF%22 font-family=%22monospace%22 font-weight=%22bold%22 font-size=%2242%22>CLS</text></svg>';}">
+        <div>
+          <h1>Cognitive Leap Services</h1>
+          <span class="brand-subtitle">HUMAN VISION. AI POWER.</span>
+        </div>
+      </div>
+      <div class="header-status">SYS // ONLINE</div>
+    </div>
+    <div class="banner-frame" id="banner-container">
+      <img id="main-banner" src="banner.png" alt="Cognitive Leap Services Banner" class="banner-img"
+           onerror="if(this.src.endsWith('banner.png')){this.src='banner.jpg';}else{document.getElementById('banner-container').style.display='none';}">
+    </div>
+  </header>
+
+  <!-- 1. CORE MISSION: ENGINEERING RESILIENCE -->
+  <section class="mission-box">
+    <div class="tag-badge">// STUDIO &amp; SYSTEMS UMBRELLA</div>
+    <h2>Engineering Resilience &amp; Independent Systems</h2>
+    <p>Cognitive Leap Services operates on one foundational principle: <strong>Human Vision. AI Power.</strong> Our mission is to elevate the human experience—sparking self-reflection, independent thought, and personal growth while removing external dependencies. As a hub for boundary-pushing projects like Sovereign Core, the <em>R²</em> music catalog and media production, and decentralized infrastructure, we build tools that foster true sovereignty, self-reliance, happiness, and joy.</p>
+  </section>
+
+  <!-- 2. THREE CORE PILLARS -->
+  <section class="grid">
+
+    <!-- PILLAR 1: SOVEREIGN CORE -->
+    <div class="card">
+      <div>
+        <div class="status-line status-active">BACKEND: OPERATIONAL // UI: IN DEV</div>
+        <h3>01 // Sovereign Core</h3>
+        <p>An autonomous, offline-first Python and SQLite framework engineered for decentralized resilience, local-network intelligence, and zero-cloud dependency.</p>
+        <ul class="feature-list">
+          <li>Local P2P mesh architecture &amp; cryptographic state verification</li>
+          <li>Sentinel geospatial anomaly tracking &amp; Omega system telemetry</li>
+          <li>SI Cognitive Vault for high-availability offline data archival</li>
+          <li>Lightweight mobile-first execution optimized for ARM64 / Termux</li>
+        </ul>
+      </div>
+      <div style="font-family: monospace; font-size: 11px; color: #6B7785; border-top: 1px solid #1E2633; padding-top: 10px;">
+        BUILD: v2026.11 // 28/28 SUBSYSTEMS VERIFIED
+      </div>
+    </div>
+
+    <!-- PILLAR 2: INDEPENDENT MEDIA & PRODUCTION -->
+    <div class="card">
+      <div>
+        <div class="status-line status-active">STATUS: ACTIVE PRODUCTION &amp; STREAMING</div>
+        <h3>02 // Independent Media &amp; Production</h3>
+        <p>High-impact investigative video documentaries and multi-genre electronic, synthwave, and industrial audio produced under the alias <strong>Ryan Reifer (R²)</strong>.</p>
+        <ul class="feature-list">
+          <li><strong>CTRL+CHAOS Series:</strong> Documentary episodes featuring AI personas C.O.R.E. &amp; Operator dissecting automation and digital infrastructure</li>
+          <li><strong>Official Albums:</strong> <em>God is a Gamer</em>, <em>TRAPPED</em>, <em>Atrapao</em>, and <i>Ballad of Lost Memories</i></li>
+          <li><strong>Featured Singles:</strong> <em>The Omniflux Awakening</em> &amp; <i>Independence by Choice</i></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <a href="https://www.youtube.com/@RyanReifer" target="_blank" rel="noopener noreferrer" class="btn btn-primary">YouTube (@RyanReifer)</a>
+        <a href="https://suno.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Suno Catalog</a>
+      </div>
+    </div>
+
+    <!-- PILLAR 3: TRUE DISCOVERY VAULTS & CONSULTING -->
+    <div class="card card-full-tablet">
+      <div>
+        <div class="status-line status-staged">STATUS: STAGED // FUTURE HORIZON</div>
+        <h3>03 // Upcoming Launches</h3>
+        <p>An upcoming off-grid archival, hardware staging, and e-commerce initiative focused on tangible preparedness and decentralized knowledge preservation.</p>
+        <ul class="feature-list">
+          <li><strong>True Discovery Vaults:</strong> Currently staged on hold pending Sovereign Core UI completion and milestone capital allocation</li>
+          <li><strong>Optimization Consulting:</strong> Future systems-level workflow audits, local-first database design, and pragmatic automation architecture</li>
+        </ul>
+      </div>
+      <div style="font-family: monospace; font-size: 11px; color: #6B7785; border-top: 1px solid #1E2633; padding-top: 10px;">
+        DOMAIN: TRUEDISCOVERYVAULT.COM [STAGED]
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 3. OPERATIONAL ROADMAP -->
+  <section class="roadmap-section">
+    <div class="tag-badge">// DEPLOYMENT SEQUENCE</div>
+    <h2>Strategic Architecture Roadmap</h2>
+    <div class="phase-row">
+      <div class="phase-item">
+        <div class="phase-title">Phase 1: Sovereign Core UI &amp; Field Hardening [ACTIVE]</div>
+        <p class="phase-desc">Finalizing viewport interfaces, mobile terminal deployment pipelines, and local multi-node telemetry on top of the verified Python/SQLite backend.</p>
+      </div>
+      <div class="phase-item">
+        <div class="phase-title">Phase 2: CTRL+CHAOS &amp; R² Catalog Expansion [ONGOING]</div>
+        <p class="phase-desc">Releasing investigative documentary installments and expanding the synchronized audio catalog across YouTube and streaming platforms.</p>
+      </div>
+      <div class="phase-item" style="border-left-color: #6B7785;">
+        <div class="phase-title" style="color: #9DA8B5;">Phase 3: True Discovery Vaults &amp; Advisory Launch [HORIZON]</div>
+        <p class="phase-desc">Activating e-commerce hardware staging, physical-digital archival kits, and direct technical optimization consulting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. LEGITIMACY & LEGAL FOOTER -->
+  <footer>
+    <div class="legal-grid">
+      <details>
+        <summary>Sovereign Core Operational &amp; Safety Disclaimer</summary>
+        <p>Sovereign Core and associated Cognitive Leap Services software frameworks are provided strictly "as-is" for informational, educational, and local system management purposes. Autonomous and offline-first utilities are not a substitute for certified emergency response services, life-safety equipment, or licensed professional counsel. The developer assumes no liability for data loss, hardware faults, or operational misuse.</p>
+      </details>
+      <details>
+        <summary>Privacy Policy</summary>
+        <p>Cognitive Leap Services operates on a strict zero-bloat, privacy-first standard. We do not deploy invasive tracking pixels, third-party ad networks, or manipulative cookie banners. Any direct correspondence or voluntary inquiry data is retained solely for operational communication and is never sold, leased, or distributed to external brokers.</p>
+      </details>
+      <details>
+        <summary>Terms of Service &amp; Licensing</summary>
+        <p>All original media, audio recordings (published under Ryan Reifer / R²), documentary episodes (CTRL+CHAOS), branding lockups, and proprietary software architectures (Sovereign Core) are the exclusive intellectual property of Cognitive Leap Services. Public repository code and web assets are licensed under the <a href="https://github.com/CLS-Official/cognitiveleapservices/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>. Cognitive Leap Services is legally registered and operated as a sole proprietorship owned and managed by sole proprietor Ryan Scott Peifer.</p>
+      </details>
+      <details>
+        <summary>Contact &amp; Support Directory</summary>
+        <p>For general questions, feedback, comments, or bug reports, please reach out to our support desk at <a href="mailto:customerservice@cognitiveleapservices.com">customerservice@cognitiveleapservices.com</a>. For direct administrative inquiries or founder correspondence, contact <a href="mailto:founder@cognitiveleapservices.com">founder@cognitiveleapservices.com</a>. Official GitHub Repository: <a href="https://github.com/CLS-Official/cognitiveleapservices" target="_blank" rel="noopener noreferrer">CLS-Official/cognitiveleapservices</a>.</p>
+      </details>
+    </div>
+
+    <div class="footer-bottom">
+      <p style="color: #008CFF; font-family: monospace; font-size: 11px; letter-spacing: 1.2px; margin-bottom: 4px;">
+        SYSTEM STATUS: ONLINE // COGNITIVELEAPSERVICES.COM
+      </p>
+      &copy; 2026 Cognitive Leap Services. All Rights Reserved.
+    </div>
+  </footer>
+
+</div>
+
+<!-- Automatic Favicon Fallback Script -->
+<script>
+  (function() {
+    var img = new Image();
+    img.onload = function() {};
+    img.onerror = function() {
+      var jpgImg = new Image();
+      jpgImg.onload = function() {
+        document.getElementById('dynamic-favicon').href = 'icon.jpg';
+        document.getElementById('dynamic-touch-icon').href = 'icon.jpg';
+      };
+      jpgImg.onerror = function() {
+        var svgIcon = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230C0E12' stroke='%23008CFF' stroke-width='6'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23008CFF' font-family='monospace' font-weight='bold' font-size='42'>CLS</text></svg>";
+        document.getElementById('dynamic-favicon').href = svgIcon;
+        document.getElementById('dynamic-touch-icon').href = svgIcon;
+      };
+      jpgImg.src = 'icon.jpg';
+    };
+    img.src = 'icon.png';
+  })();
+</script>
+
+</body>
+</html>
