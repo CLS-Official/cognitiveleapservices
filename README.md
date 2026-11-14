@@ -11,7 +11,7 @@ Official web presence and static repository for Cognitive Leap Services — an i
 ---
 
 ## Legal & Licensing
-* **Ownership:** Engineered and maintained by **Cognitive Leap Services** (Sole Proprietorship owned and managed by **Ryan Scott Peifer**).
+* **Ownership:** Engineered and maintained by **Cognitive Leap Services** (Sole Proprietorship owned and managed by **RSP**).
 * **License:** This project is open-source software released under the **MIT License**.
 * **Disclaimer:** Provided strictly "as-is" without warranty of any kind, express or implied. The author and Cognitive Leap Services assume no liability for data loss, system faults, or operational misuse.
 
